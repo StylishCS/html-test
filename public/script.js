@@ -21,3 +21,11 @@ function appendMessage(message) {
     messageElement.innerText = message
     messageContainer.append(messageElement);
 }
+
+messageForm.addEventListener('submit', e => {
+    e.preventDefault()
+    const message = messageInput.value
+    appendMessage(`You: ${message}`)
+    socket.emit('send-chat-message', message)
+    messageInput.value = ''
+})
