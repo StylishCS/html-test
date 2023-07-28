@@ -2,7 +2,7 @@ const app = require('express')();
 const http = require('http').createServer(app);
 
 app.get('/', (req,res)=>{
-    res.sendFile('/index.html');
+    res.sendFile('https://chat-app-75wx.onrender.com/index.html');
 })
 
 
