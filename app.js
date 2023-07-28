@@ -1,8 +1,12 @@
 const app = require('express')();
 const http = require('http').createServer(app);
+const express = require('express');
+
+app.use('/static', express.static('public'))
+
 
 app.get('/', (req,res)=>{
-    res.sendFile('https://chat-app-75wx.onrender.com/index.html');
+    res.sendFile('index.html', { root: '.' })
 })
 
 
